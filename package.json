@@ -1,0 +1,20 @@
+{
+  "name": "online-quiz-application",
+  "version": "1.0.0",
+  "description": "A full-stack online quiz application with React frontend and Node.js backend",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "test": "cd server && npm test"
+  },
+  "keywords": ["quiz", "react", "nodejs", "express", "sqlite"],
+  "author": "Quiz App Developer",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+

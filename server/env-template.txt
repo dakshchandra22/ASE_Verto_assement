@@ -1,0 +1,23 @@
+# Server Environment Variables Template
+# Copy this file to .env and update the values
+
+# Server Configuration
+NODE_ENV=development
+PORT=3001
+
+# Frontend URL for CORS
+FRONTEND_URL=http://localhost:3000
+
+# Email Configuration (Gmail)
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-16-character-app-password
+
+# Database Configuration
+DB_PATH=./quiz.db
+
+# Security
+JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
+
+# API Configuration
+API_VERSION=v1
+API_PREFIX=/api
