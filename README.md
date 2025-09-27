@@ -1,215 +1,165 @@
-# 🧠 Enhanced Online Quiz Application
+# 🎯 Quiz Application - ASE Verto Assessment
 
-A comprehensive, well-structured full-stack quiz application with user registration, random question selection, timer functionality, and email notifications.
+A complete full-stack quiz application built with **Test-Driven Development (TDD)** methodology, featuring a modern React frontend and Express.js backend with email notifications.
+
+## 🚀 Live Demo
+
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:3001
+- **API Documentation**: http://localhost:3001/api
 
 ## ✨ Features
 
-### Core Features
-- **User Registration**: Collect name, email, and phone before starting quiz
-- **Random Question Selection**: 5 random questions selected from 25 available questions
-- **Interactive Quiz Interface**: Clean, modern UI with smooth navigation
-- **Question Navigation**: Previous/Next buttons to move between questions
-- **Answer Tracking**: State management to track user responses
-- **Score Calculation**: Backend API calculates accurate scores
-- **Results Display**: Shows score, percentage, and detailed question review
+### 🎮 Quiz System
+- **10 Diverse Questions**: Covering various topics (Geography, Science, History, etc.)
+- **Random Selection**: 5 random questions per quiz session
+- **Multiple Choice**: 4 options per question with single correct answer
+- **Real-time Scoring**: Instant score calculation with percentage
+- **Session Management**: Secure user session tracking
 
-### Enhanced Features
-- **⏱️ Timer**: 2-minute countdown with visual warnings and auto-submit
-- **📊 Detailed Results**: Shows which questions were correct/incorrect with explanations
-- **📧 Email Notifications**: Automatic email with results sent to user
-- **🎲 Random Selection**: Different questions each time you take the quiz
-- **📱 Responsive Design**: Works on desktop and mobile devices
-- **🧪 Comprehensive Testing**: Backend tests for scoring logic
-- **🎨 Modern UI/UX**: Beautiful gradient design with smooth animations
+### 👤 User Management
+- **User Registration**: Name, email, and phone validation
+- **Session Tracking**: Unique session IDs for each quiz
+- **Data Validation**: Comprehensive input validation
+- **In-Memory Storage**: Fast and reliable data persistence
 
-## 🏗️ Architecture
+### 📧 Email Notifications
+- **Quiz Results**: Automatic email with detailed results
+- **Gmail Integration**: SMTP configuration for reliable delivery
+- **HTML Templates**: Professional email formatting
+- **Error Handling**: Graceful fallback when email not configured
 
-### Backend Structure (Modular & Component-Based)
+### 🎨 Modern UI/UX
+- **Responsive Design**: Works on desktop, tablet, and mobile
+- **React Components**: Modular and reusable components
+- **Timer Integration**: Built-in quiz timer functionality
+- **Clean Interface**: Intuitive and user-friendly design
+
+## 🛠️ Tech Stack
+
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **Nodemailer** - Email service
+- **CORS** - Cross-origin resource sharing
+- **dotenv** - Environment variable management
+
+### Frontend
+- **React** - UI library
+- **React Scripts** - Build tools
+- **Modern JavaScript** - ES6+ features
+- **CSS3** - Styling and animations
+
+### Development
+- **Git** - Version control
+- **npm** - Package management
+- **TDD** - Test-driven development
+- **RESTful API** - API design principles
+
+## 📁 Project Structure
+
 ```
-server/
-├── config/
-│   └── database.js          # Database configuration and initialization
-├── controllers/
-│   └── quizController.js    # Business logic for quiz operations
-├── routes/
-│   └── quizRoutes.js        # API route definitions
-├── services/
-│   ├── emailService.js      # Email notification service
-│   ├── questionService.js   # Question management service
-│   └── userService.js       # User management service
-├── middleware/               # Custom middleware (future use)
-├── models/                  # Data models (future use)
-├── tests/
-│   └── quiz.test.js         # Test suite
-├── app.js                   # Main application setup
-├── index.js                 # Application entry point
-└── .env.example             # Environment variables template
-```
-
-### Frontend Structure (Component-Based with Hooks)
-```
-client/src/
-├── components/
-│   ├── UserDetailsPage.js   # User registration form
-│   ├── QuizPage.js          # Main quiz interface
-│   ├── Timer.js             # Timer component
-│   └── ResultsPage.js       # Results display
-├── hooks/
-│   ├── useQuiz.js           # Quiz state management
-│   ├── useTimer.js          # Timer functionality
-│   └── useValidation.js     # Form validation
-├── utils/
-│   └── api.js               # API service layer
-├── constants/
-│   └── index.js             # Application constants
-├── App.js                   # Main app component
-└── App.css                  # Styling
+ASE_Verto_assement/
+├── client/                 # React frontend
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── hooks/         # Custom React hooks
+│   │   ├── utils/         # Utility functions
+│   │   └── constants/     # Application constants
+│   └── package.json
+├── server/                 # Express.js backend
+│   ├── controllers/       # API controllers
+│   ├── services/         # Business logic services
+│   ├── routes/           # API routes
+│   ├── config/           # Configuration files
+│   └── package.json
+├── .gitignore            # Git ignore rules
+├── README.md             # Project documentation
+└── ENVIRONMENT_SETUP.md  # Environment setup guide
 ```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 - Node.js (v14 or higher)
-- npm or yarn
+- npm (v6 or higher)
+- Git
 
 ### Installation
 
-1. **Clone and install dependencies**:
+1. **Clone the repository**
 ```bash
+   git clone https://github.com/dakshchandra22/ASE_Verto_assement.git
 cd ASE_Verto_assement
-npm run install-all
 ```
 
-2. **Set up environment variables**:
+2. **Install backend dependencies**
 ```bash
 cd server
-cp .env.example .env
-# Edit .env with your email credentials
+   npm install
 ```
 
-3. **Start the application**:
+3. **Install frontend dependencies**
 ```bash
-npm run dev
-```
+   cd ../client
+   npm install
+   ```
 
-This will start both the backend server (port 3001) and frontend development server (port 3000).
+4. **Set up environment variables**
+   ```bash
+   # Backend
+   cd ../server
+   cp env-template.txt .env
+   # Edit .env with your configuration
+   
+   # Frontend
+   cd ../client
+   cp env-template.txt .env
+   # Edit .env with your configuration
+   ```
 
-### Manual Setup
-
-If you prefer to run servers separately:
-
-**Backend**:
+5. **Start the application**
 ```bash
-cd server
-npm install
-npm run dev
-```
-
-**Frontend**:
-```bash
+   # Terminal 1 - Backend
+   cd server
+   npm start
+   
+   # Terminal 2 - Frontend
 cd client
-npm install
 npm start
 ```
 
+6. **Access the application**
+   - Frontend: http://localhost:3000
+   - Backend: http://localhost:3001
+
 ## 📧 Email Configuration
 
-### Environment Variables
-Create a `.env` file in the `server` directory:
+To enable email notifications, update `server/.env`:
 
 ```env
-# Email Configuration
 EMAIL_USER=your-email@gmail.com
-EMAIL_PASS=your-app-password
-
-# Server Configuration
-PORT=3001
-NODE_ENV=development
+EMAIL_PASS=your-16-character-app-password
 ```
 
 ### Gmail Setup
-1. Enable 2-Factor Authentication on your Gmail account
-2. Generate an App Password:
-   - Go to Google Account settings
-   - Security → 2-Step Verification → App passwords
-   - Generate a password for "Mail"
-3. Use the app password in your `.env` file
-
-## 🧪 Testing
-
-Run the backend tests:
-```bash
-cd server
-npm test
-```
-
-The test suite includes:
-- Question fetching functionality
-- Score calculation for various scenarios
-- Error handling for invalid inputs
-- API endpoint validation
-
-## 📊 Database Schema
-
-### Questions Table
-```sql
-CREATE TABLE questions (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  question_text TEXT NOT NULL,
-  quiz_id INTEGER DEFAULT 1
-);
-```
-
-### Options Table
-```sql
-CREATE TABLE options (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  question_id INTEGER NOT NULL,
-  option_text TEXT NOT NULL,
-  is_correct BOOLEAN DEFAULT 0,
-  FOREIGN KEY (question_id) REFERENCES questions (id)
-);
-```
-
-### User Details Table
-```sql
-CREATE TABLE user_details (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT NOT NULL,
-  email TEXT NOT NULL,
-  phone TEXT NOT NULL,
-  quiz_session_id TEXT UNIQUE,
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-);
-```
-
-## 🎯 Quiz Flow
-
-1. **User Registration**: User enters name, email, and phone number
-2. **Question Selection**: System randomly selects 5 questions from 25 available
-3. **Quiz Taking**: User answers questions with 2-minute timer
-4. **Submission**: User submits answers or timer auto-submits
-5. **Results & Email**: Score display with detailed review and email notification
+1. Enable 2-Factor Authentication
+2. Generate App Password
+3. Update environment variables
+4. Restart the server
 
 ## 🔧 API Endpoints
 
-### GET /api/health
-Health check endpoint.
-
-**Response**:
-```json
-{
-  "status": "OK",
-  "message": "Quiz API is running",
-  "timestamp": "2024-01-01T00:00:00.000Z"
-}
+### Health Check
+```http
+GET /api/health
 ```
 
-### POST /api/start-quiz
-Register user and get 5 random questions.
+### Start Quiz
+```http
+POST /api/start-quiz
+Content-Type: application/json
 
-**Request**:
-```json
 {
   "name": "John Doe",
   "email": "john@example.com",
@@ -217,157 +167,99 @@ Register user and get 5 random questions.
 }
 ```
 
-**Response**:
-```json
-{
-  "questions": [
-    {
-      "id": 1,
-      "question": "What is the capital of France?",
-      "options": [
-        {"id": 1, "text": "London"},
-        {"id": 2, "text": "Paris"},
-        {"id": 3, "text": "Berlin"},
-        {"id": 4, "text": "Madrid"}
-      ]
-    }
-  ],
-  "sessionId": "unique-session-id"
-}
-```
+### Submit Answers
+```http
+POST /api/submit-answers
+Content-Type: application/json
 
-### POST /api/submit-answers
-Submit user answers and receive score calculation with email notification.
-
-**Request**:
-```json
 {
+  "sessionId": "session-id-here",
   "answers": [
     {"questionId": 1, "optionId": 2},
-    {"questionId": 2, "optionId": 3}
-  ],
-  "sessionId": "unique-session-id"
+    {"questionId": 2, "optionId": 5}
+  ]
 }
 ```
 
-**Response**:
-```json
-{
-  "score": 2,
-  "totalQuestions": 5,
-  "percentage": 40,
-  "results": [
-    {
-      "questionId": 1,
-      "userAnswer": 2,
-      "correctAnswer": 2,
-      "correctAnswerText": "Paris",
-      "isCorrect": true
-    }
-  ],
-  "user": {
-    "name": "John Doe",
-    "email": "john@example.com",
-    "phone": "1234567890"
-  }
-}
-```
+## 🧪 Testing
 
-## 🎨 UI/UX Features
+The application was built using **Test-Driven Development (TDD)** methodology:
 
-- **Modern Design**: Gradient backgrounds and smooth animations
-- **Responsive Layout**: Adapts to different screen sizes
-- **Visual Feedback**: Selected options highlighted, progress bar
-- **Timer Warnings**: Color changes and pulsing animation
-- **Score Visualization**: Color-coded results based on performance
-- **Form Validation**: Real-time validation for user details
+1. **Backend Tests**: Jest-based testing for API endpoints
+2. **Frontend Tests**: React Testing Library for components
+3. **Integration Tests**: End-to-end functionality testing
+4. **Email Tests**: Email service validation
 
-## 🛠️ Development
+## 📚 Documentation
 
-### Code Organization Principles
+- [Environment Setup Guide](ENVIRONMENT_SETUP.md)
+- [Email Configuration Guide](EMAIL_SETUP_GUIDE.md)
+- [API Documentation](http://localhost:3001/api)
 
-#### Backend
-- **Separation of Concerns**: Controllers handle HTTP, services handle business logic
-- **Dependency Injection**: Services are injected into controllers
-- **Error Handling**: Centralized error handling with proper HTTP status codes
-- **Environment Configuration**: All configuration through environment variables
-- **Database Abstraction**: Database operations encapsulated in services
+## 🎯 Features Implemented
 
-#### Frontend
-- **Custom Hooks**: Reusable logic extracted into custom hooks
-- **Component Composition**: Small, focused components
-- **State Management**: Centralized state management with useQuiz hook
-- **API Abstraction**: API calls abstracted into service layer
-- **Constants**: Configuration values centralized in constants file
+### ✅ Core Functionality
+- [x] User registration and validation
+- [x] Quiz question management
+- [x] Answer submission and scoring
+- [x] Session management
+- [x] Email notifications
+- [x] Error handling
 
-### Adding New Features
+### ✅ Technical Features
+- [x] RESTful API design
+- [x] CORS configuration
+- [x] Environment variable management
+- [x] Input validation
+- [x] Security best practices
+- [x] Responsive design
 
-#### Backend
-1. Create service in `services/` directory
-2. Add controller method in `controllers/quizController.js`
-3. Define route in `routes/quizRoutes.js`
-4. Add tests in `tests/` directory
-
-#### Frontend
-1. Create component in `components/` directory
-2. Add custom hook if needed in `hooks/` directory
-3. Update constants if needed
-4. Add API methods in `utils/api.js`
-
-### Adding New Questions
-
-Modify the `questions` array in `server/services/questionService.js`:
-
-```javascript
-const questions = [
-  {
-    text: "Your question here?",
-    options: [
-      { text: "Option 1", isCorrect: false },
-      { text: "Option 2", isCorrect: true },
-      { text: "Option 3", isCorrect: false },
-      { text: "Option 4", isCorrect: false }
-    ]
-  }
-];
-```
+### ✅ Development Features
+- [x] Git version control
+- [x] Comprehensive documentation
+- [x] Environment configuration
+- [x] Error logging
+- [x] Code organization
 
 ## 🚀 Deployment
 
 ### Backend Deployment
-1. Set up a Node.js hosting service (Heroku, Railway, etc.)
-2. Configure environment variables for email
-3. Deploy the server directory
+1. Set production environment variables
+2. Configure email service
+3. Deploy to cloud platform (Heroku, AWS, etc.)
+4. Set up domain and SSL
 
 ### Frontend Deployment
-1. Build the React app: `cd client && npm run build`
-2. Deploy the build folder to a static hosting service
-3. Update API URLs in the frontend code
-
-## 📝 License
-
-MIT License - feel free to use this project for learning and development!
+1. Build production bundle: `npm run build`
+2. Deploy to static hosting (Netlify, Vercel, etc.)
+3. Configure API endpoints
+4. Set up custom domain
 
 ## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
-3. Make your changes following the established patterns
+3. Make your changes
 4. Add tests for new functionality
 5. Submit a pull request
 
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Daksh Chandra**
+- GitHub: [@dakshchandra22](https://github.com/dakshchandra22)
+- Project: [ASE Verto Assessment](https://github.com/dakshchandra22/ASE_Verto_assement)
+
+## 🙏 Acknowledgments
+
+- Built for ASE Verto Assessment
+- Test-Driven Development methodology
+- Modern web development best practices
+- Comprehensive documentation and setup guides
+
 ---
 
-**Built with ❤️ using React, Node.js, Express, SQLite, and Nodemailer**
-
-## 🎉 What's New in This Version
-
-- ✅ **Modular Architecture**: Clean separation of concerns with services, controllers, and routes
-- ✅ **Custom Hooks**: Reusable logic with useQuiz, useTimer, and useValidation hooks
-- ✅ **Environment Configuration**: Proper environment variable management
-- ✅ **Error Handling**: Comprehensive error handling and validation
-- ✅ **API Service Layer**: Abstracted API calls with proper error handling
-- ✅ **Constants Management**: Centralized configuration values
-- ✅ **Component-Based Design**: Small, focused, reusable components
-- ✅ **Type Safety**: Better prop validation and error handling
-- ✅ **Scalable Structure**: Easy to extend and maintain
+**🎉 Ready to take a quiz? Visit http://localhost:3000 and start testing your knowledge!**
