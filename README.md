@@ -1,6 +1,6 @@
-# 🎯 Quiz Application - ASE Verto Assessment
+# 🎯 ASE Verto Assessment Online Quiz Application
 
-A complete full-stack quiz application built with **Test-Driven Development (TDD)** methodology, featuring a modern React frontend and Express.js backend with email notifications.
+A complete full-stack online quiz application built with **Test-Driven Development (TDD)** methodology, featuring a modern React frontend and Express.js backend with email notifications.
 
 ## 🚀 Live Demo
 
@@ -251,7 +251,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Daksh Chandra**
 - GitHub: [@dakshchandra22](https://github.com/dakshchandra22)
-- Project: [ASE Verto Assessment](https://github.com/dakshchandra22/ASE_Verto_assement)
+- Project: [ASE Verto Assessment Online Quiz Application](https://github.com/dakshchandra22/ASE_Verto_assement)
 
 ## 🙏 Acknowledgments
 
